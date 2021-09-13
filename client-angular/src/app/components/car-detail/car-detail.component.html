@@ -1,0 +1,11 @@
+<div class="col-md-12" *ngIf="car">
+  <h2>{{ car.title }}</h2>
+    <p><strong *ngIf="car.status == 'true'">Disponible</strong></p>
+    <p><strong *ngIf="car.status != 'true'">Agotado</strong></p>
+    <p>
+      {{ car.price }} $
+    </p>
+    <p>
+      {{ car.description }}
+    </p>
+</div>

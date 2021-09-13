@@ -1,0 +1,27 @@
+<div class="col-md-12">
+    <h2>{{ title }}</h2><br>
+    <div class="loading" *ngIf="!cars">Cargando...</div>
+    <table class="table table-hosver table-stripped" id="cars-list">
+        <tr>
+            <th>Título</th>
+            <th>Precio</th>
+            <th>Estado</th>
+            <th>Descripción</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr *ngFor="let car of cars" >
+            <td>{{ car.title }}</td>
+            <td>{{ car.price }}</td>
+            <td>
+                <span *ngIf="car.status == 'true'">Disponible</span>
+                <span *ngIf="car.status != 'true'">Agotado</span>
+            </td>
+            <td>{{ car.description }}</td>
+            <td><a [routerLink]="['car', car.id]" class="btn btn-success">Ver</a></td>
+            <td><a [routerLink]="['ecar', car.id]" class="btn btn-warning">Editar</a></td>
+            <td><a (click)="deleteCar(car.id)" class="btn btn-danger">Eliminar</a></td>
+        </tr>
+    </table>
+</div>

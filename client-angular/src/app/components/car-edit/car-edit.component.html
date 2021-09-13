@@ -1,0 +1,31 @@
+<!-- <div class="col-md-12" *ngIf="car">
+  <h2>{{ page_title }}</h2>
+</div>
+<div class="alert alert-success" *ngIf="status_car == 'success'"> Creado con éxito </div>
+<div class="alert alert-danger" *ngIf="status_car == 'error'"> No se pudo crear el vehiculo </div>
+<form #ccreateForm="ngForm" (ngSubmit)="onSubmit(ccreateForm)" class="col-md-5">
+  <p>
+      <label for="title">Titulo</label>
+      <input type="text" name="title" #title=ngModel [(ngModel)]="car.title" class="form-control" required>
+      <span *ngIf="!title.valid && title.touched">El titulo es obligatorio</span>
+  </p>
+  <p>
+    <label for="price">Precio</label>
+    <input type="number" name="price" #price=ngModel [(ngModel)]="car.price" class="form-control" required>
+    <span *ngIf="!price.valid && price.touched">El precio es obligatorio</span>
+  </p>
+  <p>
+    <label for="status">Disponibilidad</label>
+    <select name="status" #status=ngModel [(ngModel)]="car.status" class="form-control" required>
+      <option value="true" selected>En venta</option>
+      <option value="false">Agotado</option>
+    </select>
+    <span *ngIf="!status.valid && status.touched">La contraseña es obligatorio</span>
+  </p>
+  <p>
+    <label for="description">Descripción</label>
+    <textarea name="description" #description=ngModel [(ngModel)]="car.description" class="form-control" required></textarea>
+    <span *ngIf="!description.valid && description.touched">La descripcion es obligatorio</span>
+  </p>
+  <input type="submit" value="Guardar" class="btn btn-primary" [disabled]="!ccreateForm.form.valid">
+</form> -->

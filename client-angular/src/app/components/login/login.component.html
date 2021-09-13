@@ -1,0 +1,17 @@
+<div class="col-md-12">
+    <h2>{{ title }}</h2>
+    <div class="alert alert-danger" *ngIf="status == 'error'"> Error al iniciar sesión, por favor valide sus datos. </div>
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" class="col-md-5" action="">
+        <p>
+            <label for="email">Email</label>
+            <input type="email" name="email" #email="ngModel" [(ngModel)]="user.email" required class="form-control">
+            <span *ngIf="!email.valid && email.touched">Email no valido</span>
+        </p>
+        <p>
+            <label for="password">Contraseña</label>
+            <input type="password" name="password" #password="ngModel" [(ngModel)]="user.password" required class="form-control">
+            <span *ngIf="!password.valid && password.touched">Contraseña no valida</span>
+        </p>
+        <input type="submit" value="Iniciar" class="btn btn-primary" [disabled]="!loginForm.form.valid">
+    </form>
+</div>
